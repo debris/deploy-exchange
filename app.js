@@ -43,5 +43,6 @@ Promise.all([config, ClientReceiptAbi, ClientReceiptBinary]).then(function (arr)
     console.error(err);
 }).done(function (address) {
     console.log("CONTRACT ADDRESS: " + address);
+    process.exit();
 });
 
