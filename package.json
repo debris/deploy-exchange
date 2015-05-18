@@ -1,0 +1,14 @@
+{
+  "name": "deploy-exchange",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "web3": "ethereum/web3.js#icap"
+  }
+}
