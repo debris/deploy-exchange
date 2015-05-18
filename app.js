@@ -37,7 +37,7 @@ Promise.all([config, ClientReceiptAbi, ClientReceiptBinary]).then(function (arr)
     var from = config.from === "coinbase" ? web3.eth.coinbase : config.coinbase;
     var institution = config.institution;
     
-    var contract = web3.eth.contract(abi).new(namereg, institution, { from: from, gas: 2500000 });
+    var contract = web3.eth.contract(abi).new(namereg, institution, { from: from, gas: 2500000, data: code });
     return contract.address;
 }).catch(function (err) {
     console.error(err);
