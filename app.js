@@ -4,7 +4,6 @@ var fs = Promise.promisifyAll(require('fs'));
 var exec = Promise.promisify(require('child_process').exec);
 
 var web3 = require('web3');
-web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 
 var config = 'config.json';
 
@@ -33,10 +32,14 @@ Promise.all([config, ClientReceiptAbi, ClientReceiptBinary]).then(function (arr)
     var config = arr[0];
     var abi = arr[1];
     var code = '0x' + arr[2];
+    var host = config.jsonrpc;
+
+    web3.setProvider(new web3.providers.HttpProvider(host));
+
     var namereg = config.namereg === 'default' ? web3.eth.namereg.address : config.namereg;
     var from = config.from === "coinbase" ? web3.eth.coinbase : config.coinbase;
     var institution = config.institution;
-    
+
     var contract = web3.eth.contract(abi).new(namereg, institution, { from: from, gas: 2500000, data: code });
     return contract.address;
 }).catch(function (err) {

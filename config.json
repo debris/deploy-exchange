@@ -1,5 +1,6 @@
 {
     "institution": "XREG",
     "namereg": "default",
-    "from": "coinbase"
+    "from": "coinbase",
+    "jsonrpc": "http://localhost:8545"
 }
