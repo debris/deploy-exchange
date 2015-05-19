@@ -1,6 +1,12 @@
 # deploy-exchange
 This script will deploy and register [ICAP](https://github.com/ethereum/wiki/wiki/ICAP:-Inter-exchange-Client-Address-Protocol) compatible ethereum exchange contract.
 
+<p align="center" >
+  <img src="https://docs.google.com/drawings/d/1atX7Lv9eYQSBkIDWFwEVXYYH7OMdcYCPkXB823AhUrU/pub?w=960&amp;h=1800">
+</p>
+
+
+
 ### Requirements
 
 - node
