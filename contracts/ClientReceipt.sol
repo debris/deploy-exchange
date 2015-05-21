@@ -40,10 +40,6 @@ contract killswitch is owned {
 
 contract ClientReceipt is owned, killswitch {
 
-  function ClientReceipt(address _namereg, bytes32 _institution) {
-    NameReg(_namereg).register(_institution);
-  }
-
   event AnonymousDeposit(address indexed _from, uint _value);
   event Deposit(address indexed _from, bytes32 _id, uint _value);
   event Refill(address indexed _from, uint _value);
